@@ -21,6 +21,7 @@
     "build": "vite build && vue-tsc --emitDeclarationOnly -p tsconfig.production.json",
     "build:storybook": "build-storybook",
     "postversion": "git push && git push --tags",
+    "prepublish": "npm run build",
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.vue,.js",
     "lint:fix": "npm run lint -- --fix",
     "typecheck": "vue-tsc --noEmit",
