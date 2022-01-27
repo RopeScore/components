@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs"
+  },
+  "exclude": [
+    "vite.config.ts",
+    "lib/**/*.test.ts",
+    "lib/**/*.stories.ts"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "outDir": "dist",
+    "lib": ["esnext", "dom"],
+    "types": [
+      "vite/client",
+      "unplugin-icons/types/vue"
+    ],
+    "skipLibCheck": true
+  },
+  "include": ["lib/**/*.ts", "lib/**/*.d.ts", "lib/**/*.tsx", "lib/**/*.vue", "vite.config.ts", "windi.config.ts"]
+}
