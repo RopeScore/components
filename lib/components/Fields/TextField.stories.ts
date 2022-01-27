@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/vue3'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ExtractPropTypes, ref } from 'vue'
 import TextField from './TextField.vue'
 
 export default {
@@ -15,7 +15,7 @@ export default {
   }
 } as Meta
 
-const Template: Story<TextField> = (args) => defineComponent({
+const Template: Story<ExtractPropTypes<typeof TextField>> = (args) => defineComponent({
   // Components used in your story `template` are defined in the `components` object
   components: { TextField },
   // The story's `args` need to be mapped into the template through the `setup()` method

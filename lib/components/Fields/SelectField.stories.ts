@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/vue3'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ExtractPropTypes, ref } from 'vue'
 import SelectField from './SelectField.vue'
 
 export default {
@@ -14,7 +14,7 @@ export default {
   }
 } as Meta
 
-const Template: Story<SelectField> = (args) => defineComponent({
+const Template: Story<ExtractPropTypes<typeof SelectField>> = (args) => defineComponent({
   components: { SelectField },
   setup: () => ({
     args,
