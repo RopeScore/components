@@ -17,7 +17,8 @@ export default {
     default: {
       control: 'text',
       description: 'Slot content'
-    }
+    },
+    onClick: { action: 'clicked' }
   }
 } as Meta
 
@@ -27,7 +28,7 @@ const Template: Story<ExtractPropTypes<typeof TextButton>> = (args) => defineCom
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup: () => ({ args }),
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<text-button v-bind="args">{{ args.default }}</text-button>'
+  template: '<text-button v-bind="args" @click="args.onClick">{{ args.default }}</text-button>'
 })
 
 export const Default = Template.bind({})

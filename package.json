@@ -26,7 +26,8 @@
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.vue,.js",
     "lint:fix": "npm run lint -- --fix",
     "typecheck": "vue-tsc --noEmit",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "chromatic": "npx chromatic -b build:storybook"
   },
   "dependencies": {
     "uuid": "^8.3.2"
@@ -45,6 +46,7 @@
     "@vitejs/plugin-vue": "^2.1.0",
     "@vue/compiler-sfc": "^3.2.19",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.4.1",
     "eslint": "^7.32.0",
     "eslint-config-standard-with-typescript": "^21.0.1",
     "eslint-plugin-import": "^2.24.2",
