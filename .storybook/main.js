@@ -18,8 +18,7 @@ module.exports = {
   async viteFinal (config) {
     config.root = path.dirname(__dirname)
     config.plugins.push(WindiCSS({
-      config: path.join(__dirname, '..', 'windi.config.ts'),
-      // root: path.dirname(__dirname),
+      config: path.join(__dirname, '..', 'windi.config.ts')
     }))
     config.plugins.push(Icons({
       compiler: 'vue3'
