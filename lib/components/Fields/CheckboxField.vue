@@ -1,5 +1,5 @@
 <template>
-  <label class="flex gap-2 items-center cursor-pointer" :class="{ 'mt-2': !dense }">
+  <label class="flex gap-2 items-center" :class="{ 'mt-2': !dense, 'cursor-pointer': !disabled }">
     <input
       :value="modelValue"
       type="checkbox"
