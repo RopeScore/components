@@ -31,3 +31,8 @@ export const Default = Template.bind({})
 Default.args = {
   label: 'Input Label'
 }
+
+export const NoLabel = Template.bind({})
+NoLabel.args = {
+  dense: true
+}

@@ -10,7 +10,7 @@
       :placeholder="dense ? label : ' '"
       :value="modelValue"
       :disabled="disabled"
-      class="block border-0 border-b-2 w-full bg-transparent disabled:bg-gray-100"
+      class="block border-0 border-b-2 w-full bg-transparent disabled:bg-gray-200"
       :class="{
         'p-0': dense,
         'px-0.5': dense,

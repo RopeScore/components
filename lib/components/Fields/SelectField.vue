@@ -6,7 +6,7 @@
       :placeholder="dense ? label : ' '"
       :value="modelValue"
       :disabled="disabled"
-      class="block border-0 border-b-2 w-full min-w-12 bg-transparent"
+      class="block border-0 border-b-2 w-full min-w-12 bg-transparent disabled:bg-gray-200"
       :class="{
         'p-0': dense,
         'px-0.5': dense,
@@ -14,9 +14,7 @@
 
         'pt-4': !dense,
         'pb-1': !dense,
-        'px-3': !dense,
-
-        'bg-gray-200': disabled
+        'px-3': !dense
       }"
       @change="input"
     >

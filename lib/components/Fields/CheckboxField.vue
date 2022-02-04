@@ -5,15 +5,18 @@
       type="checkbox"
       class="hidden"
       aria-hidden="false"
-      :disabled="disabled"
+      :disabled="disabled || loading"
       @change="emit('update:modelValue', !modelValue)"
     >
 
     <div
-      class="p-0 hover:bg-gray-200 border rounded flex justify-center items-center"
+      class="p-0 hover:bg-gray-300 border rounded flex justify-center items-center"
       :class="{
-        'bg-green-500': modelValue,
-        'hover:bg-green-300': modelValue,
+        'bg-green-500': modelValue && !disabled,
+        'hover:bg-green-300': modelValue && !disabled,
+
+        'bg-gray-200': disabled && !modelValue,
+        'bg-green-300': disabled && modelValue,
 
         'h-8': !dense,
         'w-8': !dense,
@@ -22,24 +25,30 @@
         'w-6': dense
       }"
     >
-      <icon-check class="text-white" />
+      <icon-loading v-if="loading" class="text-white animate-spin" />
+      <icon-check v-else class="text-white" />
     </div>
 
-    <span>{{ label }}</span>
+    <span v-if="label">{{ label }}</span>
   </label>
 </template>
 
 <script setup lang="ts">
 import IconCheck from 'virtual:icons/mdi/check'
+import IconLoading from 'virtual:icons/mdi/loading'
 
 defineProps({
   dense: {
     type: Boolean,
     default: false
   },
+  loading: {
+    type: Boolean,
+    default: false
+  },
   label: {
     type: String,
-    required: true
+    default: null
   },
   modelValue: {
     type: Boolean,

@@ -8,7 +8,7 @@
       :value="modelValue"
       :list="dataList.length ? `${id}-list` : undefined"
       :disabled="disabled"
-      class="block border-0 border-b-gray-500 border-b-2 w-full bg-transparent"
+      class="block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200"
       :class="{
         'p-0': dense,
         'px-0.5': dense,
