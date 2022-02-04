@@ -10,8 +10,10 @@
     >
 
     <div
-      class="p-0 hover:bg-gray-300 border rounded flex justify-center items-center"
+      class="p-0 border rounded flex justify-center items-center"
       :class="{
+        'hover:bg-gray-300': !disabled,
+
         'bg-green-500': modelValue && !disabled,
         'hover:bg-green-300': modelValue && !disabled,
 
