@@ -17,7 +17,7 @@ const Template: Story<ExtractPropTypes<typeof CheckboxField>> = (args) => define
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup: () => ({
     args,
-    value: ref<boolean | null>()
+    value: ref<boolean | null>(args.modelValue ?? null)
   }),
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `
@@ -35,4 +35,11 @@ Default.args = {
 export const NoLabel = Template.bind({})
 NoLabel.args = {
   dense: true
+}
+
+export const Loading = Template.bind({})
+Loading.args = {
+  label: 'Select Thing',
+  modelValue: true,
+  loading: true
 }
