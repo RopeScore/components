@@ -1,5 +1,5 @@
 <template>
-  <text-button text @click="open">
+  <text-button text :dense="dense" :disabled="disabled" @click="open">
     {{ label }}
   </text-button>
   <teleport to="body">
@@ -27,6 +27,14 @@ defineProps({
   label: {
     type: String,
     required: true
+  },
+  dense: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 })
 
