@@ -6,6 +6,7 @@
       class="hidden"
       aria-hidden="false"
       :disabled="disabled || loading"
+      :required="required"
       @change="emit('update:modelValue', !modelValue)"
     >
 
@@ -57,6 +58,10 @@ defineProps({
     default: false
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  required: {
     type: Boolean,
     default: false
   }

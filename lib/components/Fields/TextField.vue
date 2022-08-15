@@ -8,6 +8,7 @@
       :value="modelValue"
       :list="dataList.length ? `${id}-list` : undefined"
       :disabled="disabled"
+      :required="required"
       class="block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200"
       :class="{
         'p-0': dense,
@@ -63,6 +64,10 @@ const props = defineProps({
     default: () => []
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  required: {
     type: Boolean,
     default: false
   }

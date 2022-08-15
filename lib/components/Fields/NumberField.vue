@@ -10,6 +10,7 @@
       :placeholder="dense ? label : ' '"
       :value="modelValue"
       :disabled="disabled"
+      :required="required"
       class="block border-0 border-b-2 w-full bg-transparent disabled:bg-gray-200"
       :class="{
         'p-0': dense,
@@ -60,6 +61,10 @@ const props = defineProps({
     default: undefined
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  required: {
     type: Boolean,
     default: false
   }
