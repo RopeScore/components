@@ -51,7 +51,7 @@ const props = defineProps({
     default: false
   },
   type: {
-    type: String as PropType<'text' | 'number' | 'date'>,
+    type: String as PropType<'text' | 'number' | 'date' | 'email'>,
     default: 'text'
   },
   modelValue: {
