@@ -6,3 +6,5 @@ export { default as NoteCard } from './components/NoteCard.vue'
 export { default as TextButton } from './components/TextButton.vue'
 
 export * from './components/Fields'
+
+export type { DataListItem } from './helpers'
