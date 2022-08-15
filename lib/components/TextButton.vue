@@ -5,18 +5,26 @@
     class="px-2 mx-1 transition-colors rounded uppercase font-semibold disabled:text-gray-400 disabled:cursor-default whitespace-nowrap relative"
     :class="{
       'py-1': !dense,
-      'hover:bg-gray-200': !color,
+      'border-2': selected,
+
+      'hover:bg-gray-200': !color && !disabled,
+      'border-black': !color && selected,
+      'disabled:text-gray-400': !selected,
 
       'text-blue-500': color === 'blue',
+      'border-blue-500': color === 'blue' && selected,
       'hover:bg-blue-100': color === 'blue',
 
       'text-green-500': color === 'green',
+      'border-green-500': color === 'green' && selected,
       'hover:bg-green-100': color === 'green',
 
       'text-red-500': color === 'red',
+      'border-red-500': color === 'red' && selected,
       'hover:bg-red-100': color === 'red',
 
       'text-orange-500': color === 'orange',
+      'border-orange-500': color === 'orange' && selected,
       'hover:bg-orange-100': color === 'orange'
     }"
   >
@@ -40,6 +48,10 @@ defineProps({
     default: false
   },
   disabled: {
+    type: Boolean,
+    default: false
+  },
+  selected: {
     type: Boolean,
     default: false
   },
