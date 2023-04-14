@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import type { PropType } from 'vue'
+
+defineProps({
+  color: {
+    type: String as PropType<'blue' | 'green' | 'red' | 'orange'>,
+    validator (value: unknown) {
+      return (
+        typeof value === 'string' &&
+        ['blue', 'green', 'red', 'orange'].includes(value)
+      ) || typeof value === 'undefined'
+    },
+    default: undefined
+  }
+})
+</script>
+
 <template>
   <div
     class="border-l border-l-4 py-2 px-4 mt-2"
@@ -18,20 +35,3 @@
     <slot />
   </div>
 </template>
-
-<script setup lang="ts">
-import type { PropType } from 'vue'
-
-defineProps({
-  color: {
-    type: String as PropType<'blue' | 'green' | 'red' | 'orange'>,
-    validator (value: unknown) {
-      return (
-        typeof value === 'string' &&
-        ['blue', 'green', 'red', 'orange'].includes(value)
-      ) || typeof value === 'undefined'
-    },
-    default: undefined
-  }
-})
-</script>

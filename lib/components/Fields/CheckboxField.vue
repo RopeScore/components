@@ -1,12 +1,45 @@
+<script setup lang="ts">
+import IconCheck from '~icons/mdi/check'
+import IconLoading from '~icons/mdi/loading'
+
+defineProps({
+  dense: {
+    type: Boolean,
+    default: false
+  },
+  loading: {
+    type: Boolean,
+    default: false
+  },
+  label: {
+    type: String,
+    default: null
+  },
+  modelValue: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  }
+})
+
+// eslint-disable-next-line func-call-spacing
+const emit = defineEmits<{
+  (event: 'update:modelValue', value: boolean): void
+}>()
+</script>
+
 <template>
   <label class="flex gap-2 items-center" :class="{ 'mt-2': !dense, 'cursor-pointer': !disabled }">
     <input
       :value="modelValue"
+      v-bind="$attrs"
       type="checkbox"
       class="hidden"
       aria-hidden="false"
       :disabled="disabled || loading"
-      :required="required"
       @change="emit('update:modelValue', !modelValue)"
     >
 
@@ -35,37 +68,3 @@
     <span v-if="label">{{ label }}</span>
   </label>
 </template>
-
-<script setup lang="ts">
-import IconCheck from 'virtual:icons/mdi/check'
-import IconLoading from 'virtual:icons/mdi/loading'
-
-defineProps({
-  dense: {
-    type: Boolean,
-    default: false
-  },
-  loading: {
-    type: Boolean,
-    default: false
-  },
-  label: {
-    type: String,
-    default: null
-  },
-  modelValue: {
-    type: Boolean,
-    default: false
-  },
-  disabled: {
-    type: Boolean,
-    default: false
-  },
-  required: {
-    type: Boolean,
-    default: false
-  }
-})
-
-const emit = defineEmits(['update:modelValue'])
-</script>

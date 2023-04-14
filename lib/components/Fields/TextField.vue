@@ -1,40 +1,3 @@
-<template>
-  <div class="relative" :class="{ 'mt-2': !dense }">
-    <input
-      :id="id"
-      :name="id"
-      :type="type"
-      :placeholder="dense ? label : ' '"
-      :value="modelValue"
-      :list="dataList.length ? `${id}-list` : undefined"
-      :disabled="disabled"
-      :required="required"
-      class="block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200"
-      :class="{
-        'p-0': dense,
-        'px-0.5': dense,
-        'm-0': dense,
-
-        'pt-4': !dense,
-        'pb-1': !dense,
-        'px-3': !dense
-      }"
-      @input="input"
-    >
-    <label
-      v-if="!dense"
-      :for="id"
-      class="absolute top-4 left-3 transition-all text-base text-dark-100 cursor-text"
-    >{{ label }}</label>
-  </div>
-
-  <datalist v-if="dataList.length" :id="`${id}-list`">
-    <option v-for="item of dataList" :key="value(item)">
-      {{ text(item) }}
-    </option>
-  </datalist>
-</template>
-
 <script setup lang="ts">
 import { v4 as uuid } from 'uuid'
 
@@ -62,18 +25,13 @@ const props = defineProps({
     type: Array as PropType<Readonly<Array<DataListItem>>>,
     required: false,
     default: () => []
-  },
-  disabled: {
-    type: Boolean,
-    default: false
-  },
-  required: {
-    type: Boolean,
-    default: false
   }
 })
 
-const emit = defineEmits(['update:modelValue'])
+// eslint-disable-next-line func-call-spacing
+const emit = defineEmits<{
+  (event: 'update:modelValue', value: number | string): void
+}>()
 
 const id = uuid().replace(/^[^a-z]+/, '')
 
@@ -93,6 +51,42 @@ function text (item: DataListItem) {
   return (item as any).text ?? item
 }
 </script>
+
+<template>
+  <div class="relative" :class="{ 'mt-2': !dense }">
+    <input
+      v-bind="$attrs"
+      :id="id"
+      :name="id"
+      :type="type"
+      :placeholder="dense ? label : ' '"
+      :value="modelValue"
+      :list="dataList.length ? `${id}-list` : undefined"
+      class="text-base block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200 invalid:bg-red-100"
+      :class="{
+        'p-0': dense,
+        'px-0.5': dense,
+        'm-0': dense,
+
+        'pt-4': !dense,
+        'pb-1': !dense,
+        'px-3': !dense
+      }"
+      @input="input"
+    >
+    <label
+      v-if="!dense"
+      :for="id"
+      class="absolute top-4 left-3 transition-all text-base text-dark-100 cursor-text"
+    >{{ label }}</label>
+  </div>
+
+  <datalist v-if="dataList.length" :id="`${id}-list`">
+    <option v-for="item of dataList" :key="value(item)">
+      {{ text(item) }}
+    </option>
+  </datalist>
+</template>
 
 <style>
 input:focus + label,
