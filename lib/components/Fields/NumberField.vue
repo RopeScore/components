@@ -30,15 +30,13 @@ const props = defineProps({
 })
 
 // eslint-disable-next-line func-call-spacing
-const emit = defineEmits<{
-  (event: 'update:modelValue', value: number): void
-}>()
+const emit = defineEmits<(event: 'update:modelValue', value: number) => void>()
 
 const id = uuid().replace(/^[^a-z]+/, '')
 
 function input (event: any) {
   let num = parseInt((event.target as HTMLInputElement).value, 10)
-  if (Number.isNaN(num)) return emit('update:modelValue', num)
+  if (Number.isNaN(num)) { emit('update:modelValue', num); return }
 
   num = clampNumber(num, { min: props.min, max: props.max, step: props.step })
 

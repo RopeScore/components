@@ -6,7 +6,7 @@ defineProps({
   disabled: TextButton.props.disabled,
   selected: TextButton.props.selected,
   color: TextButton.props.color,
-  // @ts-expect-error
+  // @ts-expect-error this one is global
   ...RouterLink.props
 })
 </script>

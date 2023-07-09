@@ -1,5 +1,5 @@
-import { Meta, Story } from '@storybook/vue3'
-import { defineComponent, ExtractPropTypes, ref } from 'vue'
+import { type Meta, type Story } from '@storybook/vue3'
+import { defineComponent, type ExtractPropTypes, ref } from 'vue'
 import CheckboxField from './CheckboxField.vue'
 
 export default {

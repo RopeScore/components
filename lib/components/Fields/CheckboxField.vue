@@ -26,9 +26,7 @@ defineProps({
 })
 
 // eslint-disable-next-line func-call-spacing
-const emit = defineEmits<{
-  (event: 'update:modelValue', value: boolean): void
-}>()
+const emit = defineEmits<(event: 'update:modelValue', value: boolean) => void>()
 </script>
 
 <template>

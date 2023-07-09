@@ -1,5 +1,5 @@
-import { Meta, Story } from '@storybook/vue3'
-import { defineComponent, ExtractPropTypes } from 'vue'
+import { type Meta, type Story } from '@storybook/vue3'
+import { defineComponent, type ExtractPropTypes } from 'vue'
 import DialogButton from './DialogButton.vue'
 
 export default {
