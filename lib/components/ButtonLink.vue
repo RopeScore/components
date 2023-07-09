@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TextButton from './TextButton.vue'
+import { RouterLink } from 'vue-router'
 
 defineProps({
   dense: TextButton.props.dense,
@@ -12,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-  <router-link v-slot="{ href, navigate, isActive }" v-bind="$props" custom>
+  <router-link :to="to" v-slot="{ href, navigate, isActive }" v-bind="$props" custom>
     <a :href="href" @click="disabled ? null : navigate()">
       <text-button :dense="dense" :selected="selected" :disabled="disabled">
         <slot :is-active="isActive" />
