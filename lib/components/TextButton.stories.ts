@@ -18,6 +18,15 @@ export default {
       control: 'text',
       description: 'Slot content'
     },
+    dense: {
+      control: 'boolean'
+    },
+    disabled: {
+      control: 'boolean'
+    },
+    selected: {
+      control: 'boolean'
+    },
     onClick: { action: 'clicked' }
   }
 } as Meta
