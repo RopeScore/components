@@ -2,17 +2,21 @@
 import TextButton from './TextButton.vue'
 
 defineProps({
-  dense: {
-    type: Boolean,
-    default: false
-  }
+  dense: TextButton.props.dense,
+  disabled: TextButton.props.disabled,
+  selected: TextButton.props.selected,
+  color: TextButton.props.color,
+  // @ts-expect-error
+  ...RouterLink.props
 })
 </script>
 
 <template>
-  <router-link v-slot="{ navigate }" custom>
-    <text-button :dense="dense" @click="navigate">
-      <slot />
-    </text-button>
+  <router-link v-slot="{ href, navigate, isActive }" v-bind="$props" custom>
+    <a :href="href" @click="navigate">
+      <text-button :dense="dense" :selected="selected" :disabled="disabled" @click="navigate">
+        <slot :is-active="isActive" />
+      </text-button>
+    </a>
   </router-link>
 </template>
