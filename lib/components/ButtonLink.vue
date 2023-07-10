@@ -14,7 +14,7 @@ defineProps({
 
 <template>
   <router-link :to="to" v-slot="{ href, navigate, isActive }" v-bind="$props" custom>
-    <a :href="href" @click="disabled ? null : navigate()">
+    <a :href="href" @click.prevent="disabled ? null : navigate()">
       <text-button :dense="dense" :selected="selected" :disabled="disabled">
         <slot :is-active="isActive" />
       </text-button>
