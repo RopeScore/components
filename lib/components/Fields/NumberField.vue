@@ -44,9 +44,16 @@ function input (event: any) {
 }
 </script>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false
+}
+</script>
+
 <template>
   <div class="relative" :class="{ 'mt-2': !dense }">
     <input
+      v-bind="$attrs"
       :id="id"
       :name="id"
       type="number"
@@ -55,8 +62,7 @@ function input (event: any) {
       :step="step"
       :placeholder="dense ? label : ' '"
       :value="modelValue"
-      v-bind="$attrs"
-      class="block border-0 border-b-2 w-full bg-transparent disabled:bg-gray-200"
+      class="text-base block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200 invalid:bg-red-100"
       :class="{
         'p-0': dense,
         'px-0.5': dense,

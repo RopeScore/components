@@ -29,6 +29,12 @@ defineProps({
 const emit = defineEmits<(event: 'update:modelValue', value: boolean) => void>()
 </script>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false
+}
+</script>
+
 <template>
   <label class="flex gap-2 items-center" :class="{ 'mt-2': !dense, 'cursor-pointer': !disabled }">
     <input

@@ -14,7 +14,7 @@ const props = defineProps({
     default: false
   },
   type: {
-    type: String as PropType<'text' | 'number' | 'date' | 'email'>,
+    type: String as PropType<'text' | 'number' | 'date' | 'email' | 'url'>,
     default: 'text'
   },
   modelValue: {
@@ -50,6 +50,12 @@ function text (item: DataListItem) {
 }
 </script>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false
+}
+</script>
+
 <template>
   <div class="relative" :class="{ 'mt-2': !dense }">
     <input
@@ -75,7 +81,7 @@ function text (item: DataListItem) {
     <label
       v-if="!dense"
       :for="id"
-      class="absolute top-4 left-3 transition-all text-base text-dark-100 cursor-text"
+      class="absolute top-4 left-3 transition-all text-base text-dark-100 cursor-text whitespace-nowrap overflow-ellipsis"
     >{{ label }}</label>
   </div>
 

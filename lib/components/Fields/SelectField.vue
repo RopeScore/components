@@ -41,6 +41,12 @@ function text (item: DataListItem) {
 }
 </script>
 
+<script lang="ts">
+export default {
+  inheritAttrs: false
+}
+</script>
+
 <template>
   <div class="relative" :class="{ 'mt-2': !dense }">
     <select
