@@ -17,7 +17,7 @@ defineProps({
 
 <template>
   <div
-    class="border-l border-l-4 py-2 px-4 mt-2"
+    class=":uno: border-l border-l-4 py-2 px-4 mt-2"
     :class="{
       'bg-blue-100': color === 'blue' || !color,
       'border-l-blue-300': color === 'blue' || !color,

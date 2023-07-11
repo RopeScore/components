@@ -62,7 +62,7 @@ export default {
       :step="step"
       :placeholder="dense ? label : ' '"
       :value="modelValue"
-      class="text-base block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200 invalid:bg-red-100"
+      class=":uno: text-base block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200 invalid:bg-red-100"
       :class="{
         'p-0': dense,
         'px-0.5': dense,
@@ -77,12 +77,12 @@ export default {
     <label
       v-if="!dense"
       :for="id"
-      class="absolute top-4 left-3 transition-all text-base text-gray-500 cursor-text whitespace-nowrap overflow-ellipsis"
+      class=":uno: absolute top-4 left-3 transition-all text-base text-gray-500 cursor-text whitespace-nowrap overflow-ellipsis"
     >{{ label }}</label>
   </div>
 </template>
 
-<style>
+<style scoped>
 input:focus + label,
 input:not(:placeholder-shown) + label {
   @apply top-0.5;

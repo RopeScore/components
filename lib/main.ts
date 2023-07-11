@@ -1,4 +1,6 @@
-import 'virtual:windi.css'
+import '@unocss/reset/tailwind.css'
+import 'uno.css'
+import './base.css'
 
 export { default as ButtonLink } from './components/ButtonLink.vue'
 export { default as DialogButton } from './components/DialogButton.vue'

@@ -55,7 +55,7 @@ export default {
       :name="id"
       :placeholder="dense ? label : ' '"
       :value="modelValue"
-      class="text-base block border-0 border-b-gray-500 border-b-2 w-full min-w-12 bg-transparent disabled:bg-gray-200 invalid:bg-red-100"
+      class=":uno: text-base block border-0 border-b-gray-500 border-b-2 w-full min-w-12 bg-transparent disabled:bg-gray-200 invalid:bg-red-100"
       :class="{
         'p-0': dense,
         'px-0.5': dense,
@@ -76,7 +76,7 @@ export default {
     <label
       v-if="!dense"
       :for="id"
-      class="-z-1 absolute top-4 left-3 transition-all text-base text-dark-100 cursor-default"
+      class=":uno: -z-1 absolute top-4 left-3 transition-all text-base text-dark-100 cursor-default"
       :class="{
         'text-xs': !!modelValue,
         'top-0.5': !!modelValue

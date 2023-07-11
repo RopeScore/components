@@ -1,0 +1,19 @@
+h1 {
+  @apply text-4xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
+}
+
+ol {
+  @apply list-decimal ml-6;
+}
+
+ul {
+  @apply list-disc ml-6;
+}
+
+th, td {
+  @apply border border-gray-300 px-1 whitespace-nowrap;
+}

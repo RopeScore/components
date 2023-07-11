@@ -37,7 +37,7 @@ defineProps({
   <button
     v-bind="$attrs"
     :disabled="disabled || loading"
-    class="px-2 mx-1 transition-colors rounded uppercase font-semibold text-base disabled:text-gray-400 disabled:cursor-default whitespace-nowrap relative"
+    class=":uno: px-2 mx-1 transition-colors rounded uppercase font-semibold text-base disabled:text-gray-400 disabled:cursor-default whitespace-nowrap relative"
     :class="{
       'py-1': !dense,
       'border-2': selected,

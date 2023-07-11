@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-  <label class="flex gap-2 items-center" :class="{ 'mt-2': !dense, 'cursor-pointer': !disabled }">
+  <label class=":uno: flex gap-2 items-center" :class="{ 'mt-2': !dense, 'cursor-pointer': !disabled }">
     <input
       :value="modelValue"
       v-bind="$attrs"
@@ -48,7 +48,7 @@ export default {
     >
 
     <div
-      class="p-0 border rounded flex justify-center items-center"
+      class=":uno: p-0 border rounded flex justify-center items-center"
       :class="{
         'hover:bg-gray-300': !disabled,
 

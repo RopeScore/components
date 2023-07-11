@@ -31,8 +31,8 @@ function close () {
     {{ label }}
   </text-button>
   <teleport to="body">
-    <dialog ref="dialogRef" class="min-w-[50vw] rounded px-4 py-6 min-h-20">
-      <div class="absolute top-2 right-2">
+    <dialog ref="dialogRef" class=":uno: min-w-[50vw] rounded px-4 py-6 min-h-20">
+      <div class=":uno: absolute top-2 right-2">
         <text-button
           text
           @click="close"
