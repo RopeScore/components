@@ -1,4 +1,4 @@
-import { type Meta, type Story } from '@storybook/vue3'
+import { type Meta, type StoryFn } from '@storybook/vue3'
 import { defineComponent, type ExtractPropTypes } from 'vue'
 import TextButton from './TextButton.vue'
 
@@ -31,7 +31,7 @@ export default {
   }
 } as Meta
 
-const Template: Story<ExtractPropTypes<typeof TextButton>> = (args) => defineComponent({
+const Template: StoryFn<ExtractPropTypes<typeof TextButton>> = (args) => defineComponent({
   // Components used in your story `template` are defined in the `components` object
   components: { TextButton },
   // The story's `args` need to be mapped into the template through the `setup()` method

@@ -1,4 +1,4 @@
-import { type Meta, type Story } from '@storybook/vue3'
+import { type Meta, type StoryFn } from '@storybook/vue3'
 import { defineComponent, type ExtractPropTypes, ref } from 'vue'
 import SelectField from './SelectField.vue'
 
@@ -14,7 +14,7 @@ export default {
   }
 } as Meta
 
-const Template: Story<ExtractPropTypes<typeof SelectField>> = (args) => defineComponent({
+const Template: StoryFn<ExtractPropTypes<typeof SelectField>> = (args) => defineComponent({
   components: { SelectField },
   setup: () => ({
     args,

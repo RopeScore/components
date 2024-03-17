@@ -1,4 +1,4 @@
-import { type Meta, type Story } from '@storybook/vue3'
+import { type Meta, type StoryFn } from '@storybook/vue3'
 import { defineComponent, type ExtractPropTypes } from 'vue'
 import NoteCard from './NoteCard.vue'
 
@@ -17,7 +17,7 @@ export default {
   }
 } as Meta
 
-const Template: Story<ExtractPropTypes<typeof NoteCard>> = (args) => defineComponent({
+const Template: StoryFn<ExtractPropTypes<typeof NoteCard>> = (args) => defineComponent({
   // Components used in your story `template` are defined in the `components` object
   components: { NoteCard },
   // The story's `args` need to be mapped into the template through the `setup()` method

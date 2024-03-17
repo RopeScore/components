@@ -5,7 +5,7 @@ import transformerCompileClass from '@unocss/transformer-compile-class'
 
 export default defineConfig({
   presets: [
-    presetWind(),
+    presetWind()
   ],
   transformers: [
     transformerDirectives(),

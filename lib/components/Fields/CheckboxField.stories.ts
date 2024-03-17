@@ -1,4 +1,4 @@
-import { type Meta, type Story } from '@storybook/vue3'
+import { type Meta, type StoryFn } from '@storybook/vue3'
 import { defineComponent, type ExtractPropTypes, ref } from 'vue'
 import CheckboxField from './CheckboxField.vue'
 
@@ -11,13 +11,13 @@ export default {
   }
 } as Meta
 
-const Template: Story<ExtractPropTypes<typeof CheckboxField>> = (args) => defineComponent({
+const Template: StoryFn<ExtractPropTypes<typeof CheckboxField>> = (args) => defineComponent({
   // Components used in your story `template` are defined in the `components` object
   components: { CheckboxField },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup: () => ({
     args,
-    value: ref<boolean | null>(args.modelValue ?? null)
+    value: ref<boolean | null>((args.modelValue as boolean | undefined) ?? null)
   }),
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `
