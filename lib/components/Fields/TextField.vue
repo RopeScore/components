@@ -14,7 +14,7 @@ const props = defineProps({
     default: false
   },
   type: {
-    type: String as PropType<'text' | 'number' | 'date' | 'email' | 'url'>,
+    type: String as PropType<'text' | 'number' | 'date' | 'email' | 'url' | 'password'>,
     default: 'text'
   },
   modelValue: {
@@ -68,13 +68,8 @@ export default {
       :list="dataList.length ? `${id}-list` : undefined"
       class=":uno: text-base block border-0 border-b-gray-500 border-b-2 w-full bg-transparent disabled:bg-gray-200 invalid:bg-red-100"
       :class="{
-        'p-0': dense,
-        'px-0.5': dense,
-        'm-0': dense,
-
-        'pt-4': !dense,
-        'pb-1': !dense,
-        'px-3': !dense
+        'p-0 px-0.5 m-0': dense,
+        'pt-4 pb-1 px-3': !dense,
       }"
       @input="input"
     >
