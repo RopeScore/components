@@ -5,7 +5,7 @@
   },
   "exclude": [
     "vite.config.ts",
-    "windi.config.ts",
+    "unocss.config.ts",
     "lib/**/*.test.ts",
     "lib/**/*.stories.ts"
   ]

@@ -1,6 +1,6 @@
 const path = require('path');
-const WindiCSS = require('vite-plugin-windicss').default;
-const Icons = require('unplugin-icons/vite');
+const { default: Icons } = require('unplugin-icons/vite');
+const { default: Unocss } = require('unocss/vite')
 module.exports = {
   stories: ['../lib/**/*.stories.mdx', '../lib/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
@@ -10,8 +10,8 @@ module.exports = {
   },
   async viteFinal(config) {
     config.root = path.dirname(__dirname);
-    config.plugins.push(WindiCSS({
-      config: path.join(__dirname, '..', 'windi.config.ts')
+    config.plugins.push(Unocss({
+      config: path.join(__dirname, '..', 'uno.config.ts')
     }));
     config.plugins.push(Icons({
       compiler: 'vue3'
