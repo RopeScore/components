@@ -18,12 +18,11 @@ defineProps({
     default: ''
   },
   dataList: {
-    type: Array as PropType<Readonly<DataListItem[]>>,
+    type: Array as PropType<readonly DataListItem[]>,
     required: true
   }
 })
 
-// eslint-disable-next-line func-call-spacing
 const emit = defineEmits<(event: 'update:modelValue', value: number | string) => void>()
 
 const id = uuid().replace(/^[^a-z]+/, '')

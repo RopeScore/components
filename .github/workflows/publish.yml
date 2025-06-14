@@ -1,11 +1,11 @@
-name: Publish to NPM and GCR
+name: Publish to pnpm and GCR
 
 on:
   release:
     types: [created]
 
 jobs:
-  publish-npm:
+  publish-pnpm:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     permissions:
@@ -13,13 +13,16 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           registry-url: https://registry.npmjs.org/
-          cache: npm
-      - run: npm ci --prefer-offline --force
-      - run: npm publish --provenance --access public
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
@@ -28,12 +31,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
-          cache: npm
-      - run: npm ci --prefer-offline --force
-      - run: npm publish
+          node-version: 24
+          registry-url: https://pnpm.pkg.github.com/
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

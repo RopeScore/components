@@ -29,7 +29,6 @@ const props = defineProps({
   }
 })
 
-// eslint-disable-next-line func-call-spacing
 const emit = defineEmits<(event: 'update:modelValue', value: number) => void>()
 
 const id = uuid().replace(/^[^a-z]+/, '')

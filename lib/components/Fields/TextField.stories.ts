@@ -1,4 +1,4 @@
-import { type Meta, type StoryFn } from '@storybook/vue3'
+import { type Meta, type StoryFn } from '@storybook/vue3-vite'
 import { defineComponent, type ExtractPropTypes, ref } from 'vue'
 import TextField from './TextField.vue'
 

@@ -1,4 +1,4 @@
-import { type Meta, type StoryFn } from '@storybook/vue3'
+import { type Meta, type StoryFn } from '@storybook/vue3-vite'
 import { defineComponent, type ExtractPropTypes, ref } from 'vue'
 import SelectField from './SelectField.vue'
 
@@ -7,7 +7,7 @@ export default {
   component: SelectField,
   argTypes: {
     dataList: {
-      control: { type: 'array' }
+      control: { type: 'select' }
     },
     modelValue: { control: false },
     'update:modelValue': { control: false }
