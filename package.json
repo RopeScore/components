@@ -22,7 +22,7 @@
         "default": "./dist/rs-components.umd.js"
       }
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/components.css"
   },
   "scripts": {
     "build": "vite build",
